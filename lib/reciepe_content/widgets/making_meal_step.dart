@@ -17,12 +17,12 @@ class MakingMealStep extends StatelessWidget {
           stepName,
           style: const TextStyle(color: Colors.white, fontSize: 19),
         ),
-       const SizedBox(
-          width: 12,
+        SizedBox(
+          width: MediaQuery.sizeOf(context).height / 53.2,
         ),
         CircleAvatar(
           backgroundColor: Colors.orange.shade600,
-          radius: 7,
+          radius: MediaQuery.sizeOf(context).height / 91.15,
         )
       ],
     );

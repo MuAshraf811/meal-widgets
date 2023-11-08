@@ -1,4 +1,3 @@
-
 import 'package:custom_widgets/reciepe_content/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +23,8 @@ class SectionTitleAndItsActionButton extends StatelessWidget {
           CustomOutLinesdButton(
             onTap: onTap,
             text: buttonName,
-            buttonHorizontalpadding: 18,
-            buttonLeftMargin: 8,
+            buttonHorizontalpadding: MediaQuery.sizeOf(context).height / 35.44,
+            buttonLeftMargin: MediaQuery.sizeOf(context).height / 79.75,
           ),
           SectionTitle(title: sectionTitle, fontsize: 22),
         ],
