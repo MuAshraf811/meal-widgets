@@ -15,8 +15,9 @@ class CustomMaterialButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onTap,
       color: buttonColor,
-      minWidth: 48,
-      padding:const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+      padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.sizeOf(context).height / 79.75,
+          horizontal: MediaQuery.sizeOf(context).height / 34.4),
       child: Text(
         text,
         style: const TextStyle(

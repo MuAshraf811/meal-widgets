@@ -10,26 +10,13 @@ import 'package:flutter/material.dart';
 import 'widgets/making_meal_step.dart';
 
 class ReciepeContentView extends StatelessWidget {
-  ReciepeContentView({super.key});
-  final List<double> indicatorRadius = [42, 36, 36, 36];
-  final List<double> parcent = [0.8, 0.5, 0.2, 0.7];
-  final List<int> parcentIndicatorAmount = [80, 50, 20, 60];
-  final List<String> parcentIndicatorTitle = [
-    'السعرات الحرارية',
-    'دهون',
-    'بروتين',
-    'كارب'
-  ];
-  final List<Color> progressColor = [
-    Colors.green.shade900,
-    Colors.orange,
-    Colors.red.shade900,
-    Colors.yellow
-  ];
+  const ReciepeContentView({super.key});
+
   @override
   Widget build(BuildContext context) {
     // print(MediaQuery.sizeOf(context).width.toString());
     // print(MediaQuery.sizeOf(context).height.toString());
+
     return Scaffold(
       body: Stack(
         children: [
@@ -54,75 +41,86 @@ class ReciepeContentView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(
-                            left: 28,
-                            top: 22,
-                          ),
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.sizeOf(context).height / 22,
+                              top: MediaQuery.sizeOf(context).height / 22),
                           child: Align(
                             alignment: Alignment.topRight,
                             child: CustomOutLinesdButton(
                               onTap: () {},
                               text: 'تكرار الوجبة',
-                              buttonHorizontalpadding: 12,
-                              buttonLeftMargin: 8,
+                              buttonHorizontalpadding:
+                                  MediaQuery.sizeOf(context).height / 53.4,
+                              buttonLeftMargin:
+                                  MediaQuery.sizeOf(context).height / 79.75,
                             ),
                           ),
                         ),
                         const MealName(mealName: 'بيتزا دجاج وخضار'),
                       ],
                     ),
-                    const SizedBox(height: 48),
-                    SizedBox(
-                      height: 150,
-                      width: MediaQuery.sizeOf(context).width,
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(width: 24),
-                        itemCount: 4,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 4),
-                            child: CustomParcentIndicator(
-                              radius: indicatorRadius[index],
-                              parcent: parcent[index],
-                              progressColor: progressColor[index],
-                              parcentIndicatorTitle:
-                                  parcentIndicatorTitle[index],
-                              parcentIndicatorAmount:
-                                  parcentIndicatorAmount[index],
-                            ),
-                          );
-                        },
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CustomParcentIndicator(
+                            radius: MediaQuery.sizeOf(context).height / 15.7,
+                            parcent: 0.9,
+                            progressColor: Colors.orange.shade900,
+                            parcentIndicatorTitle: 'السعرات الحرارية',
+                            parcentIndicatorAmount: 60,
+                          ),
+                          CustomParcentIndicator(
+                            radius: MediaQuery.sizeOf(context).height / 18,
+                            parcent: 0.2,
+                            progressColor: Colors.yellow.shade900,
+                            parcentIndicatorTitle: 'دهون',
+                            parcentIndicatorAmount: 20,
+                          ),
+                          CustomParcentIndicator(
+                            radius: MediaQuery.sizeOf(context).height / 18,
+                            parcent: 0.8,
+                            progressColor: Colors.red.shade900,
+                            parcentIndicatorTitle: 'بروتين',
+                            parcentIndicatorAmount: 75,
+                          ),
+                          CustomParcentIndicator(
+                            radius: MediaQuery.sizeOf(context).height / 18,
+                            parcent: 0.4,
+                            progressColor: Colors.green.shade900,
+                            parcentIndicatorTitle: 'كارب',
+                            parcentIndicatorAmount: 85,
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 21.5),
                     SectionTitleAndItsActionButton(
                       sectionTitle: 'المقادير',
                       buttonName: 'تخصيص',
                       onTap: () {},
                     ),
-                    const SizedBox(height: 24),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 26),
                     const CustomMealIngradiantsContainer(
                       ingradiantName: 'دجاج',
                       ingradiantAmount: 'جرام 30',
                     ),
                     const CustomDividerBetweenIngradients(),
-                    const SizedBox(height: 24),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 26),
                     const CustomMealIngradiantsContainer(
                       ingradiantName: 'دقيق أبيض',
                       ingradiantAmount: 'جرام 200',
                     ),
                     const CustomDividerBetweenIngradients(),
-                    const SizedBox(height: 24),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 26),
                     const CustomMealIngradiantsContainer(
                       ingradiantName: 'زيت زيتون',
                       ingradiantAmount: 'جرام 100',
                     ),
                     const CustomDividerBetweenIngradients(),
-                    const SizedBox(
-                      height: 14,
-                    ),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 45.5),
                     CustomOutLinesdButton(
                       onTap: () {},
                       text: 'إدخال مكون',
@@ -130,13 +128,13 @@ class ReciepeContentView extends StatelessWidget {
                       buttonLeftMargin: 24,
                     ),
                     const CustomDividerBetweenIngradients(),
-                    const SizedBox(height: 20),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 27.5),
                     SectionTitleAndItsActionButton(
                       sectionTitle: 'طريقة التحضير',
                       buttonName: 'فيديو طريقة التحضير',
                       onTap: () {},
                     ),
-                    const SizedBox(height: 22),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 27),
                     const Padding(
                       padding: EdgeInsets.only(right: 28),
                       child: Column(
@@ -151,13 +149,13 @@ class ReciepeContentView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 26),
                     CustomMaterialButton(
                       buttonColor: const Color.fromARGB(255, 78, 231, 83),
                       text: 'إضافة الوجبة',
                       onTap: () {},
                     ),
-                    const SizedBox(height: 24),
+                    SizedBox(height: MediaQuery.sizeOf(context).height / 26),
                   ],
                 ),
               ),
