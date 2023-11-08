@@ -17,31 +17,33 @@ class CustomParcentIndicator extends StatelessWidget {
   final double parcent;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircularPercentIndicator(
-          radius: radius,
-          animation: true,
-          animationDuration: 1200,
-          lineWidth: 10.0,
-          percent: parcent,
-          center: Text(
-            parcentIndicatorAmount.toString(),
-            style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-                color: Colors.white),
+    return Expanded(
+      child: Column(
+        children: [
+          CircularPercentIndicator(
+            radius: radius,
+            animation: true,
+            animationDuration: 1200,
+            lineWidth: 10.0,
+            percent: parcent,
+            center: Text(
+              parcentIndicatorAmount.toString(),
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                  color: Colors.white),
+            ),
+            circularStrokeCap: CircularStrokeCap.butt,
+            backgroundColor: Colors.grey.shade900,
+            progressColor: progressColor,
           ),
-          circularStrokeCap: CircularStrokeCap.butt,
-          backgroundColor: Colors.grey.shade900,
-          progressColor: progressColor,
-        ),
-        Text(
-          parcentIndicatorTitle,
-          style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
-        )
-      ],
+          Text(
+            parcentIndicatorTitle,
+            style: const TextStyle(
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
+          )
+        ],
+      ),
     );
   }
 }
