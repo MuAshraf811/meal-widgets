@@ -29,7 +29,9 @@ class _NewGradiantState extends State<NewGradiant> {
               top: 24,
               right: 24,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   height: 48,
                   width: 48,
