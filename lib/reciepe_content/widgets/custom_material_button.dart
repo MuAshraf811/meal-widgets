@@ -15,6 +15,9 @@ class CustomMaterialButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onTap,
       color: buttonColor,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+      ),
       padding: EdgeInsets.symmetric(
           vertical: MediaQuery.sizeOf(context).height / 79.75,
           horizontal: MediaQuery.sizeOf(context).height / 34.4),

@@ -1,4 +1,3 @@
-
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class UpperContainerWithMealImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: MediaQuery.sizeOf(context).width,
       height: 820,
       child: Image.network(

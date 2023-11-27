@@ -9,12 +9,14 @@ class CustomParcentIndicator extends StatelessWidget {
     required this.parcentIndicatorTitle,
     required this.parcentIndicatorAmount,
     required this.parcent,
+     this.leftPadding=0,
   });
   final double radius;
   final Color progressColor;
   final String parcentIndicatorTitle;
   final int parcentIndicatorAmount;
   final double parcent;
+  final double leftPadding;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -37,10 +39,15 @@ class CustomParcentIndicator extends StatelessWidget {
             backgroundColor: Colors.grey.shade900,
             progressColor: progressColor,
           ),
-          Text(
-            parcentIndicatorTitle,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
+          Padding(
+            padding:  EdgeInsets.only(left: leftPadding),
+            child: Text(
+              parcentIndicatorTitle,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
           )
         ],
       ),
