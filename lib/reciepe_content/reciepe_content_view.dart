@@ -3,6 +3,7 @@ import 'package:custom_widgets/reciepe_content/widgets/custom_material_button.da
 import 'package:custom_widgets/reciepe_content/widgets/custom_meal_ingradiant_container.dart';
 import 'package:custom_widgets/reciepe_content/widgets/custom_outlined_button.dart';
 import 'package:custom_widgets/reciepe_content/widgets/custom_parcent_indicator.dart';
+import 'package:custom_widgets/reciepe_content/widgets/drop-down.dart';
 import 'package:custom_widgets/reciepe_content/widgets/meal_image.dart';
 import 'package:custom_widgets/reciepe_content/widgets/meal_name.dart';
 import 'package:custom_widgets/reciepe_content/widgets/section_title_button.dart';
@@ -47,14 +48,15 @@ class ReciepeContentView extends StatelessWidget {
                                 top: MediaQuery.sizeOf(context).height / 22),
                             child: Align(
                               alignment: Alignment.topRight,
-                              child: CustomOutLinesdButton(
-                                onTap: () {},
-                                text: 'تكرار الوجبة',
-                                buttonHorizontalpadding:
-                                    MediaQuery.sizeOf(context).height / 53.4,
-                                buttonLeftMargin:
-                                    MediaQuery.sizeOf(context).height / 79.75,
-                              ),
+                              child: DropDownComponent(),
+                              // child: CustomOutLinesdButton(
+                              //   onTap: () {},
+                              //   text: 'تكرار الوجبة',
+                              //   buttonHorizontalpadding:
+                              //       MediaQuery.sizeOf(context).height / 53.4,
+                              //   buttonLeftMargin:
+                              //       MediaQuery.sizeOf(context).height / 79.75,
+                              // ),
                             ),
                           ),
                           const MealName(
